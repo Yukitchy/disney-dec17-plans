@@ -1,74 +1,85 @@
 <!DOCTYPE html>
 <html lang="ja"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>12/17 ディズニー作戦｜案2 パトリック式</title>
-<meta property="og:title" content="12/17 ディズニー作戦｜案2 パトリック式">
+<title>12/17 ディズニー作戦｜ハイブリッド</title>
+<meta property="og:title" content="12/17 ディズニー作戦｜ハイブリッド">
 <meta property="og:description" content="12月17日（木）東京ディズニーランドの1日プラン。クリスマスイベントを朝から夜まで楽しむ作戦ページ">
-<meta property="og:image" content="https://yukitchy.github.io/disney-dec17-plans/img/eparade.jpg">
+<meta property="og:image" content="https://yukitchy.github.io/disney-dec17-plans/img/tree.jpg">
 <meta property="og:url" content="https://yukitchy.github.io/disney-dec17-plans/">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎄</text></svg>">
 <style>
-:root{--ink:#20242b;--paper:#fdfcf9;--red:#e2571e;--line:#ddd5c6;--map-sea:#d7e7f2;--map-land:#f6efdf}
+:root{--bg:#f7f1e3;--ink:#33261a;--ac:#b3271e;--ac2:#1d5c38;--card:#fffdf7;--line:#e3d7bd;--red:#e2571e;--map-sea:#d7e7f2;--map-land:#f6efdf}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;background:var(--paper);color:var(--ink);line-height:1.75}
-header{padding:26px 18px 6px;max-width:640px;margin:0 auto}
-.chip{display:inline-block;background:var(--ink);color:#fff;font-size:11px;letter-spacing:.14em;padding:3px 10px;border-radius:3px}
-h1{font-size:27px;margin:10px 0 2px;letter-spacing:.02em}
-.sub{color:#5c6068;font-size:13.5px}
-.strip{display:flex;gap:6px;overflow-x:auto;padding:14px 18px 4px;max-width:640px;margin:0 auto}
-.strip figure{flex:0 0 44%}
-.strip img{width:100%;height:110px;object-fit:cover;border-radius:6px;display:block}
-.strip figcaption{font-size:11px;color:#5c6068;margin-top:3px}
+body{background:var(--bg);color:var(--ink);font-family:-apple-system,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;line-height:1.7}
+.hero{position:relative;height:62vh;min-height:380px;overflow:hidden}
+.hero img{width:100%;height:100%;object-fit:cover;display:block}
+.hero .ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,10,5,.05),rgba(20,10,5,.62));display:flex;flex-direction:column;justify-content:flex-end;padding:22px}
+.chip{align-self:flex-start;background:var(--ac);color:#fff;font-weight:700;font-size:12px;padding:4px 10px;border-radius:999px;letter-spacing:.08em}
+.hero h1{color:#fff;font-size:clamp(26px,6.4vw,44px);white-space:nowrap;text-shadow:0 2px 14px rgba(0,0,0,.45);margin-top:10px}
+.hero p{color:#ffeec9;font-size:clamp(12px,3.2vw,15px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sec{max-width:640px;margin:0 auto;padding:10px 16px 0}
+h2{font-size:19px;border-left:5px solid var(--ac2);padding-left:10px;margin:24px 0 14px}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tile{background:var(--card);border-radius:14px;overflow:hidden;box-shadow:0 2px 10px rgba(60,40,10,.10)}
+.tile img{width:100%;height:150px;object-fit:cover;display:block}
+.tile figcaption{padding:10px 12px}
+.tile b{display:block;font-size:14px}
+.tile span{font-size:12px;color:#6d5b45}
 .wrap{max-width:640px;margin:0 auto}
 .mapbox{position:sticky;top:0;height:42vh;height:42svh;z-index:5;background:#e9e2d0;border-bottom:1px solid var(--ink)}
 #map{position:absolute;inset:0}
-.where{position:absolute;left:10px;bottom:10px;z-index:600;background:rgba(253,252,249,.94);border:1px solid var(--ink);border-radius:6px;padding:5px 12px;line-height:1.35}
-.where small{display:block;font-size:11px;color:#5c6068}
+.where{position:absolute;left:10px;bottom:10px;z-index:600;background:rgba(255,253,247,.95);border:1px solid var(--ink);border-radius:8px;padding:5px 12px;line-height:1.35}
+.where small{display:block;font-size:11px;color:#6d5b45}
 .where b{font-size:15px}
 .dial{position:absolute;right:10px;bottom:10px;z-index:600;display:flex;gap:6px}
-.dial button{width:40px;height:40px;border-radius:50%;border:1px solid var(--ink);background:rgba(253,252,249,.94);font-size:18px;cursor:pointer}
+.dial button{width:40px;height:40px;border-radius:50%;border:1px solid var(--ink);background:rgba(255,253,247,.95);font-size:18px;cursor:pointer;color:var(--ink)}
 .dial button:disabled{opacity:.35}
 .pk{background:none;border:none}
 .pk .pin{width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid #8a8f98;margin:0 auto}
 .pk.on .pin{background:var(--red);border-color:var(--red)}
-.pk .lb{display:block;font-size:11px;font-weight:700;background:rgba(253,252,249,.92);border:1px solid var(--line);border-radius:3px;padding:0 5px;margin-top:2px;white-space:nowrap;color:var(--ink)}
-.steps{padding:6px 18px 10px}
-.step{border:1px solid var(--line);border-left:5px solid var(--line);border-radius:8px;background:#fff;padding:14px 16px;margin:14px 0;scroll-margin-top:46vh}
-.step.on{border-left-color:var(--red)}
-.step .tm{font-weight:800;font-size:19px}
+.pk .lb{display:block;font-size:11px;font-weight:700;background:rgba(255,253,247,.92);border:1px solid var(--line);border-radius:3px;padding:0 5px;margin-top:2px;white-space:nowrap;color:var(--ink)}
+.steps{padding:2px 16px 6px}
+.step{background:var(--card);border-radius:14px;box-shadow:0 2px 10px rgba(60,40,10,.10);margin:16px 0;overflow:hidden;scroll-margin-top:46vh}
+.step.on{box-shadow:0 0 0 2.5px var(--ac),0 2px 10px rgba(60,40,10,.10)}
+.step img{width:100%;height:160px;object-fit:cover;display:block}
+.step .bd{padding:12px 16px 14px}
+.step .tm{font-weight:800;font-size:19px;color:var(--ac)}
 .step .tm small{font-size:12px;color:#fff;background:var(--ink);border-radius:3px;padding:1px 7px;margin-right:8px;vertical-align:2px}
-.step h3{font-size:16.5px;margin:2px 0 3px}
-.step p{font-size:13.5px;color:#3c4048}
-.step img{width:100%;height:150px;object-fit:cover;border-radius:6px;margin-top:8px}
-.tail{max-width:640px;margin:0 auto;padding:4px 18px 30px}
-.tail h2{font-size:17px;border-bottom:2px solid var(--ink);padding-bottom:4px;margin:22px 0 10px}
+.step h3{font-size:16.5px;margin:1px 0 3px}
+.step p{font-size:13.5px;color:#5d4c36}
+.tail{max-width:640px;margin:0 auto;padding:4px 16px 30px}
+.tail h2{margin-top:22px}
 .qr{text-align:center}
 .qr img{width:120px;height:120px}
 .tail ul{list-style:none}
 .tail li{margin:7px 0;font-size:14px}
-.tail a{color:var(--red)}
-.note{font-size:13px;color:#3c4048;margin:6px 0}
-footer{text-align:center;font-size:11.5px;color:#8a8f98;padding:16px}
+.tail a{color:var(--ac)}
+.note{font-size:13px;color:#5d4c36;margin:6px 0}
+.lkgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.lk{display:block;background:var(--card);border:1.5px solid var(--ac2);color:var(--ac2);font-weight:700;text-align:center;padding:11px 6px;border-radius:10px;text-decoration:none;font-size:13px}
+footer{text-align:center;font-size:12px;color:#97835f;padding:18px}
 .leaflet-control-attribution{font-size:9px}
 @media(min-width:900px){
- header,.strip,.tail{max-width:1060px}
- .wrap{max-width:1060px;display:grid;grid-template-columns:1fr 1fr;gap:0}
+ .sec,.tail{max-width:1060px}
+ .wrap{max-width:1060px;display:grid;grid-template-columns:1fr 1fr}
  .mapbox{height:100vh;border-bottom:0;border-right:1px solid var(--ink)}
  .step{scroll-margin-top:12px}
 }
 </style><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"></head><body>
-<header><span class="chip">ROUTE PLAN — PATRICK STYLE</span><h1>12/17 ディズニー作戦</h1><p class="sub">東京ディズニーランド｜12月17日（木）9:00〜21:00｜チケット購入済み（大人2枚）</p></header>
-<div class="strip"><figure><img src="img/parade.jpg" alt=""><figcaption>トイズ・ワンダラス・クリスマス！</figcaption></figure><figure><img src="img/eparade.jpg" alt=""><figcaption>エレクトリカルパレード</figcaption></figure><figure><img src="img/tree.jpg" alt=""><figcaption>ワールドバザールのツリー</figcaption></figure><figure><img src="img/fireworks.jpg" alt=""><figcaption>スターブライト・クリスマス</figcaption></figure><figure><img src="img/beauty.jpg" alt=""><figcaption>美女と野獣の城</figcaption></figure></div>
+<header class="hero"><img src="img/tree.jpg" alt="ワールドバザールのクリスマスツリー">
+<div class="ov"><span class="chip">DISNEY CHRISTMAS 2026</span><h1>12/17 ディズニー作戦</h1><p>東京ディズニーランド｜12月17日（木）9:00〜21:00｜チケット購入済み（大人2枚）</p></div></header>
+<div class="sec"><h2>クリスマスの見どころ</h2><div class="tiles"><figure class="tile"><img src="img/tree.jpg" alt="ワールドバザールのツリー"><figcaption><b>ワールドバザールのツリー</b><span>入ってすぐの巨大ツリー。夜のライトアップが本番</span></figcaption></figure><figure class="tile"><img src="img/parade.jpg" alt="トイズ・ワンダラス・クリスマス！"><figcaption><b>トイズ・ワンダラス・クリスマス！</b><span>昼の新パレード。12:45〜、約45分・1日1回</span></figcaption></figure><figure class="tile"><img src="img/haunted.jpg" alt="ホリデーナイトメアー"><figcaption><b>ホリデーナイトメアー</b><span>ホーンテッドマンションのクリスマス版。9/15〜1/7</span></figcaption></figure><figure class="tile"><img src="img/beauty.jpg" alt="美女と野獣 “魔法のものがたり”"><figcaption><b>美女と野獣 “魔法のものがたり”</b><span>夕方のDPA枠で。城のライトアップも見どころ</span></figcaption></figure><figure class="tile"><img src="img/eparade.jpg" alt="エレパレ クリスマスver."><figcaption><b>エレパレ クリスマスver.</b><span>19:00〜。期間限定の音楽とコスチューム</span></figcaption></figure><figure class="tile"><img src="img/fireworks.jpg" alt="スターブライト・クリスマス"><figcaption><b>スターブライト・クリスマス</b><span>20:30〜の花火。クリスマスソングと一緒に</span></figcaption></figure></div>
+<h2>当日の流れ</h2></div>
 <div class="wrap">
 <div class="mapbox"><div id="map" aria-label="一日の地図"></div><p class="where"><small>一日の全体</small><b>一日の全体</b></p><nav class="dial" aria-label="予定を切り替え"><button type="button" class="ar" data-d="-1" aria-label="前の予定">&#8249;</button><button type="button" class="ar" data-d="1" aria-label="次の予定">&#8250;</button></nav></div>
-<div class="steps"><section class="step" data-i="0"><div class="tm"><small>0</small>一日の全体</div><h3>住吉駅から舞浜へ、ランドの中を時計回りに</h3><p>出発から閉園まで15の予定。スクロールすると地図がいまの予定の場所へ動く。</p><img src="img/tree.jpg" alt=""></section><section class="step" data-i="1"><div class="tm"><small>1</small>7:20</div><h3>住吉を出発</h3><p>住吉駅から半蔵門線と東西線、浦安から京葉線で舞浜へ。</p></section><section class="step" data-i="2"><div class="tm"><small>2</small>8:10</div><h3>舞浜駅・ゲート前</h3><p>着いたらゲート前に並ぶ。手荷物検査を済ませて開園待ち。</p></section><section class="step" data-i="3"><div class="tm"><small>3</small>9:00</div><h3>入園・アプリの3点</h3><p>入ってすぐエントリー受付（ショー）、美女と野獣のDPA（夕方）、スタンバイパスを取る。</p></section><section class="step" data-i="4"><div class="tm"><small>4</small>9:15</div><h3>ホリデーナイトメア</h3><p>ホーンテッドマンションの季節版。朝いちばんに済ませる。</p></section><section class="step" data-i="5"><div class="tm"><small>5</small>10:15</div><h3>ジングルベル・ジャンボリー</h3><p>カントリーベアシアターのクリスマス公演。</p></section><section class="step" data-i="6"><div class="tm"><small>6</small>11:00</div><h3>ワールドバザールのツリー</h3><p>巨大ツリーの前で写真。おみやげの下見もここで。</p></section><section class="step" data-i="7"><div class="tm"><small>7</small>11:30</div><h3>ブルーバイユーで昼ごはん</h3><p>プライオリティ・シーティングで予約。カリブの海賊の横の青い夕暮れの店。</p></section><section class="step" data-i="8"><div class="tm"><small>8</small>12:45</div><h3>トイズ・ワンダラス・クリスマス！</h3><p>クリスマスのパレード。1日1回だけ。城前の有料席（DPA）も候補。</p><img src="img/parade.jpg" alt=""></section><section class="step" data-i="9"><div class="tm"><small>9</small>14:00</div><h3>ジョリーフード・プラザ</h3><p>城前の屋台村でクリスマスの味めぐり。</p></section><section class="step" data-i="10"><div class="tm"><small>10</small>15:25</div><h3>ハーモニー・イン・カラー</h3><p>昼のパレード。または空いた時間で自由に。</p></section><section class="step" data-i="11"><div class="tm"><small>11</small>16:30</div><h3>マジカルミュージックワールド</h3><p>エントリーが当たれば。外れたらアトラクションへ。</p></section><section class="step" data-i="12"><div class="tm"><small>12</small>17:30</div><h3>美女と野獣“魔法のものがたり”</h3><p>DPAで夕方の回。夜の城下はライトが映える。</p></section><section class="step" data-i="13"><div class="tm"><small>13</small>19:00</div><h3>エレクトリカルパレード</h3><p>クリスマスバージョン。光のパレード。</p><img src="img/eparade.jpg" alt=""></section><section class="step" data-i="14"><div class="tm"><small>14</small>20:30</div><h3>スターブライト・クリスマス</h3><p>城のプロジェクションと花火。約5分。</p><img src="img/fireworks.jpg" alt=""></section><section class="step" data-i="15"><div class="tm"><small>15</small>21:00</div><h3>閉園</h3><p>ワールドバザールで最後のおみやげ。おつかれさま。</p></section></div>
+<div class="steps"><section class="step" data-i="0"><div class="bd"><div class="tm"><small>0</small>一日の全体</div><h3>住吉駅から舞浜へ、ランドの中を時計回りに</h3><p>出発から閉園まで15の予定。スクロールすると地図がいまの予定の場所へ動く。</p></div></section><section class="step" data-i="1"><div class="bd"><div class="tm"><small>1</small>7:20</div><h3>住吉を出発</h3><p>住吉駅から半蔵門線と東西線、浦安から京葉線で舞浜へ。</p></div></section><section class="step" data-i="2"><div class="bd"><div class="tm"><small>2</small>8:10</div><h3>舞浜駅・ゲート前</h3><p>着いたらゲート前に並ぶ。手荷物検査を済ませて開園待ち。</p></div></section><section class="step" data-i="3"><div class="bd"><div class="tm"><small>3</small>9:00</div><h3>入園・アプリの3点</h3><p>入ってすぐエントリー受付（ショー）、美女と野獣のDPA（夕方）、スタンバイパスを取る。</p></div></section><section class="step" data-i="4"><img src="img/haunted.jpg" alt=""><div class="bd"><div class="tm"><small>4</small>9:15</div><h3>ホリデーナイトメア</h3><p>ホーンテッドマンションの季節版。朝いちばんに済ませる。</p></div></section><section class="step" data-i="5"><div class="bd"><div class="tm"><small>5</small>10:15</div><h3>ジングルベル・ジャンボリー</h3><p>カントリーベアシアターのクリスマス公演。</p></div></section><section class="step" data-i="6"><img src="img/castle.jpg" alt=""><div class="bd"><div class="tm"><small>6</small>11:00</div><h3>ワールドバザールのツリー</h3><p>巨大ツリーの前で写真。おみやげの下見もここで。</p></div></section><section class="step" data-i="7"><div class="bd"><div class="tm"><small>7</small>11:30</div><h3>ブルーバイユーで昼ごはん</h3><p>プライオリティ・シーティングで予約。カリブの海賊の横の青い夕暮れの店。</p></div></section><section class="step" data-i="8"><img src="img/parade.jpg" alt=""><div class="bd"><div class="tm"><small>8</small>12:45</div><h3>トイズ・ワンダラス・クリスマス！</h3><p>クリスマスのパレード。1日1回だけ。城前の有料席（DPA）も候補。</p></div></section><section class="step" data-i="9"><div class="bd"><div class="tm"><small>9</small>14:00</div><h3>ジョリーフード・プラザ</h3><p>城前の屋台村でクリスマスの味めぐり。</p></div></section><section class="step" data-i="10"><div class="bd"><div class="tm"><small>10</small>15:25</div><h3>ハーモニー・イン・カラー</h3><p>昼のパレード。または空いた時間で自由に。</p></div></section><section class="step" data-i="11"><div class="bd"><div class="tm"><small>11</small>16:30</div><h3>マジカルミュージックワールド</h3><p>エントリーが当たれば。外れたらアトラクションへ。</p></div></section><section class="step" data-i="12"><img src="img/beauty.jpg" alt=""><div class="bd"><div class="tm"><small>12</small>17:30</div><h3>美女と野獣“魔法のものがたり”</h3><p>DPAで夕方の回。夜の城下はライトが映える。</p></div></section><section class="step" data-i="13"><img src="img/eparade.jpg" alt=""><div class="bd"><div class="tm"><small>13</small>19:00</div><h3>エレクトリカルパレード</h3><p>クリスマスバージョン。光のパレード。</p></div></section><section class="step" data-i="14"><img src="img/fireworks.jpg" alt=""><div class="bd"><div class="tm"><small>14</small>20:30</div><h3>スターブライト・クリスマス</h3><p>城のプロジェクションと花火。約5分。</p></div></section><section class="step" data-i="15"><div class="bd"><div class="tm"><small>15</small>21:00</div><h3>閉園</h3><p>ワールドバザールで最後のおみやげ。おつかれさま。</p></div></section></div>
 </div>
 <div class="tail">
 <h2>公式カレンダーのQR</h2><div class="qr"><img class="qr" alt="QR" src="https://api.qrserver.com/v1/create-qr-code/?size=132x132&amp;data=https%3A%2F%2Fwww.tokyodisneyresort.jp%2Ftdl%2Fdaily%2Fcalendar.html"><p class="note">当日のショー時刻は公式デイリーカレンダーで最終確認</p></div>
 <section class="links"><h2>リンク集</h2><div class="lkgrid"><a class="lk" href="https://www.tokyodisneyresort.jp/tdl/daily/calendar.html" target="_blank" rel="noopener">当日の公式スケジュール</a><a class="lk" href="https://www.tokyodisneyresort.jp/en/tdl/monthly/calendar/202612/" target="_blank" rel="noopener">12月の運営カレンダー</a><a class="lk" href="https://www.tokyodisneyresort.jp/tdl/restaurant/detail/318/" target="_blank" rel="noopener">ブルーバイユー・レストラン（公式）</a><a class="lk" href="https://reserve.tokyodisneyresort.jp/" target="_blank" rel="noopener">レストラン予約・購入サイト</a><a class="lk" href="https://www.google.com/maps/search/?api=1&query=%E8%88%9E%E6%B5%9C%E9%A7%85" target="_blank" rel="noopener">舞浜駅（Googleマップ）</a><a class="lk" href="https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E3%83%87%E3%82%A3%E3%82%BA%E3%83%8B%E3%83%BC%E3%83%A9%E3%83%B3%E3%83%89" target="_blank" rel="noopener">東京ディズニーランド（Googleマップ）</a></div></section>
 <section class="notes"><h2>注意メモ</h2><ul><li>公演時刻はクリスマス期間の現在パターン。12/17分の正式時刻は12月上旬に公式アプリで確定</li><li>ブルーバイユーのPSが取れなかった場合、当日枠が当日の朝9:00からオンラインで出る</li><li>DPA（美女と野獣）とショーのエントリーは入園直後にアプリで。後回しにすると枠が消える</li></ul></section>
-</div><footer>12/17 Disney Plan — 案2 パトリック式</footer><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</div><footer>12/17 Disney Plan — ハイブリッド（ユリア式×パトリック式）</footer><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 const P=[null, [35.6887, 139.814], [35.6363, 139.8836], [35.6329, 139.8806], [35.6313, 139.8818], [35.633, 139.8833], [35.6325, 139.881], [35.634, 139.8793], [35.6322, 139.8809], [35.6326, 139.8807], [35.6322, 139.8809], [35.6308, 139.8813], [35.6298, 139.8825], [35.6322, 139.8809], [35.6322, 139.8809], [35.6329, 139.8806]], Z=[16, 14, 15, 16, 17, 17, 17, 17, 16, 17, 16, 17, 17, 16, 16, 16], DAYS=["一日の全体", "7:20", "8:10", "9:00", "9:15", "10:15", "11:00", "11:30", "12:45", "14:00", "15:25", "16:30", "17:30", "19:00", "20:30", "21:00"], NAMES=["一日の全体", "住吉を出発", "舞浜駅・ゲート前", "入園・アプリの3点", "ホリデーナイトメア", "ジングルベル・ジャンボリー", "ワールドバザールのツリー", "ブルーバイユーで昼ごはん", "トイズ・ワンダラス・クリスマス！", "ジョリーフード・プラザ", "ハーモニー・イン・カラー", "マジカルミュージックワールド", "美女と野獣“魔法のものがたり”", "エレクトリカルパレード", "スターブライト・クリスマス", "閉園"];
 const ROUTE=P.filter(Boolean);
